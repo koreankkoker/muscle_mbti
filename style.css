@@ -93,14 +93,16 @@ article{
     background-color:#c7985a;
     border:none;
     font-family: 'Black Han Sans', sans-serif;
-    font-weight: 800;
+    font-weight: 500;
+    height: 80px;
 }
 
 #B{
     background-color:#c7985a;
     border:none;
     font-family: 'Black Han Sans', sans-serif;
-    font-weight: 800;
+    font-weight: 500;
+    height: 80px;
 }
 
 #subname{
@@ -177,4 +179,15 @@ li{
 #badd{
     font-family: 'Black Han Sans', sans-serif;
     font-size: larger;
+}
+
+#share{
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+#share_ment{
+    margin: 0 auto;
+    font-family: 'Black Han Sans', sans-serif;
+    margin-bottom: 20px;
 }
