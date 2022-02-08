@@ -125,7 +125,7 @@ article{
 }
 
 #explain{
-    font-size: 50%;
+    font-size: 13px;
     font-weight:200;
     font-family: 'Black Han Sans', sans-serif;
     border: 3px solid #E6BE8A;
@@ -159,6 +159,14 @@ li{
     border: 3px solid #E6BE8A;
     width:150px;
     border-radius: 10px;
+}
+
+#good1{
+    font-size: small;
+}
+
+#bad1{
+    font-size: small;
 }
 
 #goodd{
