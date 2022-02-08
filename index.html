@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Myeongjo:wght@800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>muscle_mbti</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body background="back_ground.jpg" class="container" >
+    <div id="top_title" class="mt-3 text-center">근bti</div>
+    <article class="start">
+        <img id=icon src="muscle_icon.png" alt="muscle_icon" >
+        <h1 id="start_ment"class="mt-4 text-center">당신은 <br><span class="gold_word">어떤 근육</span>인가요?</h1>
+        <div id="start_subment" class="mt-4 text-center">근육으로 알아 보는 나의 성격 테스트</div>
+        <button id="startbutton" type="button" class="btn btn-primary" onclick='start();'>테스트 시작하기</button>
+    </article>
+    <article class="question">
+        <div class="progress mt-5">
+            <div class="progress-bar" role="progressbar" style="width: calc(100/12*1%)"></div>
+        </div>
+        <img id=icon_2 src="muscle_icon.png" alt="muscle_icon" >
+        <h2 id="title" class="text-center mt-5">문제</h2>
+        <input id="type" type="hidden" value="EI">
+        <button id="A" type="button" class="btn btn-primary mt-5">Primary</button>
+        <button id="B" type="button" class="btn btn-primary mt-5 mb-5">Primary</button>
+    </article>
+    <article class="result">
+        <div id="subname" class="text-center mt-3">한줄소개</div>
+        <div id="muscle" class="text-center mt-2">근육이름</div>
+        <img id="img" class="mt-2" src="muscle.jpg" alt="muscle">
+        <div id="subtitle" class="text-center mt-3">한줄설명</div>
+        <div class ="combination text-center mt-3">
+            <div id="good">
+                <div class="mt-2 mb-1">환상의 케미</div>
+                <div id="goodd" class="mb-2">환상</div>
+            </div>
+            <div id="bad">
+                <div class="mt-2 mb-1">환장의 케미</div>
+                <div id="badd" class="mb-2">환장</div>
+            </div>
+        </div>
+        
+        <div id="explain" class="container mt-3">설명</div>
+    </article>
+    <input type="hidden" id="EI" value="0">
+    <input type="hidden" id="SN" value="0">
+    <input type="hidden" id="TF" value="0">
+    <input type="hidden" id="JP" value="0">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script>
+        var num = 1;
+        var q ={
+            1:{"title": "학교에서 좀비가 나오는 <br>영화를 봤을 때 나는", "type" :"SN", "A": "“주인공이 여기서 이렇게 했으면 친구도 안 죽지 않았을까?”", "B":"“우리 학교에서도 좀비가 나오면 어떡하지? 나는 몇 분이나 버틸까?” "},
+            2:{"title": "러닝이나 가벼운 운동을 <br>하러 나갈 때 나는", "type" :"EI", "A": "“야 운동 ㄱ?” 나오는 친구가 있을 때까지 친구에게 연락한다.", "B":"“그냥 혼자 하지 뭐” 편하게 혼자 나간다."},
+            3:{"title": "마지막 세트를 할려고 하는데 너무 힘들다. 이때 나는", "type" :"TF", "A": "“세트 수는 반드시 채워야지” 힘들어도 마무리는 해야 하니까 한다.", "B":"“신나는 노래로 바꿔서 하자” 외힙을 틀고 마지막 세트를 한다."},
+            4:{"title": "친구와 의견이 다를 때 나는", "type" :"TF", "A": "내가 무슨 의견인지 논리적에게 다시 친구에게 전달하자!", "B":"친구가 기분 나쁘지 않게 내 생각을 다시 말하자."},
+            5:{"title": "나는 운동 유튜브를 볼 때 <br>모르겠는 내용을 보면", "type" :"SN", "A": "일단 해보라고 하니까 따라해봐야지.", "B":"이해 못하겠는데 뭘 해보라는 거지? "},
+            6:{"title": "새로운 운동을 할 때 나는", "type" :"EI", "A": "주변 사람들에게 기구 사용법을 물어본다.", "B":"혼자 유튜브에서 찾아서 운동한다."},
+            7:{"title": "닭가슴살을 먹어야 한다 나는 어떤 닭가슴살을 먹을까?", "type" :"SN", "A": "“닭가슴살은 순정이지!” 오리지널 닭가슴살을 먹는다.", "B":"“다양한 맛 골라먹는게 좋아!” 다양한 소스가 발라진 닭가슴살을 먹는다."},
+            8:{"title": "맛집을 찾아서 갔는데 문이 <br>닫혀 있다. 이때 나는?", "type" :"JP", "A": "주변에 가까운 맛집을 다시 찾아서 간다.", "B":"바로 옆에 있는 식당으로 들어간다."},
+            9:{"title": "벤치옆에서 운동하시는 분이 있을 때 나는", "type" :"EI", "A": "“이거 사용하시나요? 혹시 제가 써도 될까요?” 하며 물어본다.", "B":"“다른 운동 먼저 하고 오자.” 하며 벤치가 비워질 때 까지 다른 운동을 한다."},
+            10:{"title": "운동 계획을 짤 때 나는", "type" :"JP", "A": "일주일 계획을 미리 짜놓고 매주 실행한다.", "B":"늦게 일어나면 운동하러 안간다."},
+            11:{"title": "친구가 기분이 좋지 않아 <br>우울해 보인다.", "type" :"TF", "A": "“이건 이렇게 하는게 좋지 않았을까?” 해결 방법을 같이 생각해본다. ", "B":"“어떻게 그런 말을 하냐, 그 사람이 심했네” 친구를 위로해준다."},
+            12:{"title": "헬스장에서 운동을 할 때", "type" :"JP", "A": "운동할 때마다 시간을 체크하며 시계를 자주 본다.", "B":"정해진 시간 없이 운동하며 시계를 보지 않는다. "},
+        }
+        var result = {
+            "ISTJ":{"muscle": "상완이두근","subtitle":"세트수는 반드시 채워야지!" ,"subname":"완벽주의자인 당신은" ,"good":"전완근","bad":"상완삼두근", "explain":"<ul><li>고중량 고반복이 필요한 “상완이두근” 처럼 주어진 일이나 책임을 끝까지 완수해요.</li><li>실수한 것을 절대 못참아요. 실수는 바로바로 수정해야 해요.</li><li>끝까지 참고 또 참았다가 마지막에 떠뜨려요. 참고 있다는 것을 눈치 채고 달래주어야 해요.</li><li>잘못한거는 알지만 미안하다라는 말을 잘 못해요. 약간 차가워 보이기도 해요.</li><li>아주 작은 추억들을 잘 기억해내요. 과거 추억 이야기를 하는 것을 좋아해요. 그땐 그랬었지?</li><li>갑자기 무엇인가를 변화하고 계획을 변화 하는 것을 매우 싫어해요.</li></ul>", "img":"muscle1.png"},
+            "ISFJ":{"muscle": "승모근","subtitle":"주변 사람들에게 애정이 가득가득!","subname":"누구에게나 친근한 당신은" ,"good":"대흉근","bad":"봉곤근", "explain":"<ul><li>“승모근”처럼 주변사람들에게 따듯하고 친절해요. 내 사람들에게는 애정이 가득 가득! </li><li>자신이 힘든일이 있을 때 잘 이야기 하지 않아요. </li><li>기억력이 아주 좋아요. 친구들끼리 있었던 사소한 일들도 잘 기억하고 짧은 대화도 잘 기억해요. </li><li>먼저 연락이나 대화를 시작하지 않고 친구가 먼저 다가오면 그때 이야기해요. </li><li>싸우는 것을 매우 매우 싫어해요. 주변 사람들이 싸우는 것도 매우 싫어해요. </li><li>자신의 개인 시간을 방해 받는 것을 끔찍하게 싫어해요. </li></ul>", "img":"muscle2.png"},
+            "INFJ":{"muscle": "광배근","subtitle":"나무보다는 숲을 보자!","good":"상완삼두근","bad":"상완이두근", "explain":"<ul><li>상황을 다각도로 보는 능력이 뛰어나요. 모든 상황을 이해하고 친구들에게 실감나게 잘 설명해요. </li><li>겉보기에는 누구보다 얼음처럼 차가워요. 하지만 친해지면 속은 난로처럼 누구보다 따스해요. </li><li>친구가 나에게 거짓말하는 것을 매우 싫어해요. </li><li>공감하는 척하지만 속으로는 반대로 생각해요. </li><li>친구들이 보기에 고집이 세다고 느껴요. </li><li>자신이 관심이 있고 열정이 있는 일이면 엄청 열심히 몰두해요. </li></ul>","subname":"확고한 신념을 가진 당신은" , "img":"muscle3.png"},
+            "INTJ":{"muscle": "복직근","subtitle":"모든 운동은 순서와 방법이 있지!","subname":"내가 최고인 당신은" ,"good":"삼각근","bad":"대흉근", "explain":"<ul><li>가장 먼저 눈에 띄는 “복직근”처럼 자신이 남들보다 우월하다고 생각해요. </li><li>지능이나 지식에 대해 욕심이 많아요. 더 많이 알고 많이 배우고 싶어해요. </li><li>평소 잡생각이 많고 내면이 복잡해요. </li><li>무슨 일이든 진행 순서와 방법에 맞춰서 하는 것을 좋아해요. </li><li>감정 표현이 서툴러요. 상대방에게 자신의 속마음을 잘 털어놓지 않아요. </li><li>주변 인간관계보다는 일에 높은 우선순위를 둬요. </li></ul>", "img":"muscle4.png"},
+            "ISTP":{"muscle": "외복사근","subtitle":"필요 이상의 힘은 싫어!","subname":"실용주의자인 당신은" ,"good":"대퇴사두근","bad":"비복근", "explain":"<ul><li>몸통을 회전할 때 쓰는 “외복사근”처럼 필요 이상으로 자신의 능력을 발휘하지 않아요. 자신과 관계 없는 인간관계는 아예 관심을 가지지도 않아요. </li><li>혼자서도 엄청 잘 놀아요. </li><li>하고 싶은 것만 하고 하기 싫은 것은 절대 하지 않아요. </li><li>눈치 없는 것 같지만 주변 상황을 다 보고 있고 눈치가 빨라요. </li><li>상대방 기분 맞춰주는 것을 잘 못하고 마음에 없는 소리를 하지 않아요. </li><li>생각은 엄청 적극적으로 하고 막상 할려 그려면 귀찮아서 안해요. </li></ul>", "img":"muscle5.png"},
+            "ISFP":{"muscle": "대둔근","subtitle":"인내심을 가지고 끝까지..!","subname":"강요와 압박은 싫은 당신은" ,"good":"봉곤근","bad":"광배근", "explain":"<ul><li>키우기 위해서는 인내심이 필요한 ”대둔근”처럼 인내심이 아주 강해요. </li><li>친해지기 전까지는 자신의 모습을 절대 보여주지 않아요. </li><li>친구한테 전화가 오면 받지 않고 톡으로 왜 전화했나 물어봐요. </li><li>혼자 있는 시간을 좋아해요. </li><li>주변 친구들에게 답답하다는 말을 자주 들어요. </li><li>안착한데 착해요. </li></ul>", "img":"muscle6.png"},
+            "INFP":{"muscle": "비복근","subtitle":"헬스는 고립이지!","subname":"개인주의인 당신은" ,"good":"엄지벌림근","bad":"대둔근", "explain":"<ul><li>개인주의가 상당합니다. 내가 제일 소중하고 다른 사람에게는 관심 없습니다. 마치 “비복근” 처럼요. </li><li>치킨 다리 2개를 먹는 사람과 친구 하지 않아요. 그런 사람을 혐오해요. </li><li>맞아 그런 일 있으면 진짜 힘들지….ㅠㅠㅠ 괜찮아 잘할꺼야ㅠㅠㅠ (본인이 공감가는 일에 대해서 상담 받을 때만) </li><li>너가 열심히 안해서 그렇게 된 것이 아닐까? 너무 징징대지마(본인이 공감 안가는 일에 대해서 속마음) </li><li>아싸중의 인싸, 인싸들 사이에서는 아싸</li></ul>", "img":"muscle7.png"},
+            "INTP":{"muscle": "척추기립근","subtitle":"이렇게 운동하면 어떨까?","subname":"아이디어가 넘쳐 나는 당신은" ,"good":"대퇴이두근","bad":"승모근", "explain":"<ul><li>“척추기립근”처럼 아이디어가 넘쳐나요</li><li>평소에 말이 많이 없어요. 그러다가 자신의 관심사가 나오면 말이 엄청 많아져요. </li><li>이런 테스트를 좋아해요. Mbti를 좋아하거든요. </li><li>남이 내 욕해도 신경 안 쓰고 웬만한 일에도 상처 안 받아요. </li><li>어리석거나 멍청한 소리를 하는 사람이 있으면 화가 머리 끝까지 나요. </li><li>진지충이에요.</li></ul>", "img":"muscle8.png"},
+            "ESTP":{"muscle": "전완근","subtitle":"운동은 즐겁게 해야지!","subname":"삶의 모든 것을 즐기는 당신은" ,"good":"승모근","bad":"광배근", "explain":"<ul><li>“전완근”처럼 인생을 즐겨요. 지금 당장 노는게 너무 재미있어요. </li><li>환불 성공률 100% 말빨로는 누구에게 안질 자신있어요. </li><li>오늘 해야 할 일을 내일의 나에게 미뤄요. 물론 내일의 나도 안해요. </li><li>쿨해요, 쿨해요 그냥</li><li>참을성이 없어요. 친구가 신발끈을 묶는 것을 절대 기다려주지 않죠. </li></ul>", "img":"muscle9.png"},
+            "ESFP":{"muscle": "대흉근","subtitle":"사람 좋아!","subname":"슈퍼인싸인 당신은" ,"good":"상완이두근","bad":"비복근", "explain":"<ul><li>넓은 대흉근 처럼 오지랖은 우주 최강이고 사교성이 정말 좋아요. 횡단보도 반대편 사람과도 친해질 수 있어요. </li><li>사람이 너무 좋아서 다같이 노는 걸 좋아해요. 하지만 집 밖에 나가기는 귀찮아요. </li><li>친구들이 모두 놀러갈 때 나만 일이 생겨서 못 가면 하루종일 속상해요. </li><li>고집이 쎄요. </li><li>생각 없이 살아요. 걱정 되는 일이 있어도 몇 분 후면 잊어버려요. </li><li>금방 사랑에 빠지고 사랑하는 상대방에게는 한없이 잘해줘요. </li></ul>", "img":"muscle10.png"},
+            "ENFP":{"muscle": "상완삼두근","subtitle":"나도 같이 운동하자!","subname":"친구가 많은 당신은" ,"good":"광배근","bad":"외복사근", "explain":"<ul><li>다른 부위 운동할 때도 많이 같이 쓰이는 “상완삼두근” 같은 당신, 친구가 아주 많아요. </li><li>낯을 조금 가려요. 하지만 풀리면 금방 친해지고 말도 많아져요. 이야기하는 것을 좋아해요. </li><li>생존에 의한 인싸력</li><li>감정을 잘 못 숨기고 얼굴에 다 드러나요. </li><li>어느 한가지 일에 몰두해서 일을 크게 벌리고 쉽게 질려서 마무리는 안해요. </li><li>친구들 이야기를 잘 들어주고 리액션 혜자에요. </li></ul>", "img":"muscle11.png"},
+            "ENTP":{"muscle": "삼각근","subtitle":"내 마음대로 할래!","subname":"개썅마이웨이인 당신은" ,"good":"광배근","bad":"상완이두근", "explain":"<ul><li>모든 것은 내가 하고 싶은 대로, 개썅마이웨이인 당신은 “삼각근”. </li><li>좋아하는 사람 싫어하는 사람 확실 하게 구분하고 자기 주변 사람에게만 엄청 잘해줘요. </li><li>혼자 있는 거 좋아하는데 혼자 있으면 외로움 타요. </li><li>방이 더러워요. </li><li>다방면에서 잘하는게 많아요, 근데 엄청 잘하진 않아요. </li><li>다른 사람이 무슨 생각을 하는지 나를 어떻게 생각하는지 1도 관심 없어요. </li></ul>", "img":"muscle12.png"},
+            "ESTJ":{"muscle": "대퇴이두근","subtitle":"오늘은 하체, 내일은 등!","subname":"엄격한 당신은" , "good":"대둔근","bad":"봉곤근", "explain":"<ul><li>스스로에게 엄격하고 계획은 절대 틀어지면 안되는 당신은 “대퇴이두근”.</li><li>일처리 못하는거 세상에서 제일 싫어해요. 그런 사람이 일하는 거 못보고 차라리 자신이 두세 배로 일을 더해요. </li><li>시간약속 어기는 것과, 번개약속을 극혐해요. </li><li>뭐 하나에 푹 빠지면 하루종일 그것만 해요. 또한 푹 빠진 노래가 있으면 하루종일 들어요. </li><li>자신한테 지적하는 말은 전부다 무시해요. </li><li>공감능력이 부족하며 친구가 고민을 얘기하면 머릿속으로는 누가 잘못했는지 판단하고 있어요. </li></ul>", "img":"muscle13.png"},
+            "ESFJ":{"muscle": "대퇴사두근","subtitle":"힘들어? 내가 도와줄까?","subname":"친절한 도우미인 당신은" ,"good":"외복사근","bad":"봉곤근", "explain":"<ul><li>사람을 좋아하며 주변 사람 도와주기를 좋아하는 당신은 타고난 분위기 메이커 “대퇴근”. </li><li>어색한거 절대 못참아요. 친구들과 이야기하다가 3초 이상 정적이 생기면 자신이 이야기를 이어나가야겠다는 책임감이 들어서 무슨 얘기를 할지 머릿속에서 마구 생각해요. </li><li>사회생활을 정말 잘합니다. 어디 가서도 사랑받을 스타일이에요. </li><li>수업시간에 선생님 말씀에 호응을 가장 잘 해줘요. </li><li>누가 자신을 인정해주면 한달동안 기분 좋아해요. </li><li>리액션을 정말 잘해줘서 친구들이 고민상담을 많이해요. </li></ul>", "img":"muscle14.png"},
+            "ENFJ":{"muscle": "봉곤근","subtitle":"운동에 재능 있네!","subname":"칭찬 대장인 당신은" ,"good":"대둔근","bad":"전완근", "explain":"<ul><li>사람들을 이끌고 좋아하며 항상 핵인싸를 갈망하는 당신은 “봉곤근”. </li><li>진짜 말 많고 시끄러워요. </li><li>절대 화내지 않아요. 당신이 화를 낸다면 주변 친구들도 화낼 줄 아냐고 놀랄꺼에요. </li><li>주변 친구들에게 잘해줄려고 엄청 신경써요. 하지만 그만큼 상처도 많이 받아요. </li><li>귀가 얇아요. </li><li>상대방의 좋은점을 찾아내려고 항상 노력해요. </li></ul>", "img":"muscle15.png"},
+            "ENTJ":{"muscle": "엄지벌림근","subtitle":"나만 따라와!","subname":"듬직한 지도자인 당신은" ,"good":"척추기립근","bad":"상완이두근", "explain":"<ul><li>듬직한 “광배근”처럼 카리스마와 자신감이 넘치는 타고난 리더에요. </li><li>앞으로 일어날 일에 대해서 걱정할 시간에 오만가지 루트를 머릿속에서 시뮬레이션 돌리고 해결책을 찾아요. </li><li>나서서 하는 것을 좋아하기 보다 남들이 하는 꼬락서니가 마음에 안 들어서 나서는 경우가 많아요. </li><li>관종끼가 있어요. </li><li>열등감을 느끼지 않아요. 니 일은 니 일 내 일은 내 일. </li><li>감정적인 공감능력이 부족해요. </li></ul>", "img":"muscle16.png"}
+        }
+        function start() {
+            $(".start").hide();
+            $(".question").show();
+            next();
+        }
+        $("#A").click(function(){
+            var type = $("#type").val();
+            var preValue = $("#"+type).val();
+            $("#"+type).val(parseInt(preValue)+1);
+            next();
+        });
+        $("#B").click(function(){
+            next();
+        });
+        function next(){
+            if (num==13){
+                $(".question").hide();
+                $(".result").show();
+                var mbti = "";
+                ($("#EI").val()<2) ? mbti+="I" : mbti+="E";
+                ($("#SN").val()<2) ? mbti+="N" : mbti+="S";
+                ($("#TF").val()<2) ? mbti+="F" : mbti+="T";
+                ($("#JP").val()<2) ? mbti+="P" : mbti+="J";
+
+                $("#img").attr("src",result[mbti]["img"]);
+                $("#muscle").html(result[mbti]["muscle"]);
+                $("#explain").html(result[mbti]["explain"]);
+                $("#subtitle").html(result[mbti]["subtitle"]);
+                $("#subname").html(result[mbti]["subname"])
+                $("#goodd").html(result[mbti]["good"])
+                $("#badd").html(result[mbti]["bad"])
+
+            }
+            else{
+                $(".progress-bar").attr("style","width: calc(100/12*"+num+"%)")
+                $("#title").html(q[num]["title"]);
+                $("#type").val(q[num]["type"]);
+                $("#A").html(q[num]["A"]);
+                $("#B").html(q[num]["B"]);
+                num++;
+            }
+            
+        }
+    </script>
+
+
+</body>
+</html>

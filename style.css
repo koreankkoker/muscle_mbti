@@ -1,0 +1,172 @@
+body{
+    background-color:#000000;
+    color:white;
+    font-family: 'Noto Serif KR', serif;
+    font-weight: bold;
+    /* background-size: cover; */
+    background-position: center;
+}
+
+.gold_word{
+    color:#E6BE8A;
+
+}
+
+#top_title{
+    font-family: 'Jua', sans-serif;
+    font-size: 120%;
+    font-weight: bold;
+    letter-spacing: 7px;
+    color:#eeddc7;
+}
+
+#start_subment{
+    color:#eeddc7;
+    font-family: 'Jua', sans-serif;
+    font-weight: 80;
+}
+
+#startbutton{
+    height: 80px;
+    background-color:#E6BE8A;
+    margin-top: 30%;
+    margin-bottom: 10%;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 100%;
+    font-weight:700;
+    border:none;
+}
+
+#icon{
+    width:60px;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: 40%;
+}
+
+#icon_2{
+    width:30px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 20%;
+}
+
+#start_ment{
+    line-height: 150%;
+    font-weight: bolder;
+    font-size: 220%;
+
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+}
+
+.question {
+    display: none;
+}
+
+.result {
+    display: none;
+}
+
+#img {
+    width:230px;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.progress-bar{
+    background-color:#E6BE8A;
+}
+
+#title{
+    font-family: 'Black Han Sans', sans-serif;
+    font-size:20px;
+    width: 270px;
+    margin: 0 auto;
+    line-height: 140%;
+}
+
+#A{
+    background-color:#c7985a;
+    border:none;
+    font-family: 'Black Han Sans', sans-serif;
+    font-weight: 800;
+}
+
+#B{
+    background-color:#c7985a;
+    border:none;
+    font-family: 'Black Han Sans', sans-serif;
+    font-weight: 800;
+}
+
+#subname{
+    font-size: 100%;
+    font-family: 'Black Han Sans', sans-serif;
+    color:#d4d4d4;
+}
+
+#muscle{
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 200%;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+#subtitle{
+    font-size: 80%;
+    color:#E6BE8A;
+    font-weight: bold;
+    font-family: 'Black Han Sans', sans-serif;
+    
+}
+
+#explain{
+    font-size: 50%;
+    font-weight:200;
+    font-family: 'Black Han Sans', sans-serif;
+    border: 3px solid #E6BE8A;
+    border-radius: 10px;
+    width: 320px;
+    margin-bottom: 10%;
+}
+ul{
+    font-weight:530;
+    padding-left: 5%;
+}
+
+li{
+    margin: 15px 0;
+}
+
+.combination{
+    display: flex;
+    justify-content: center;
+    
+}
+
+#good{
+    border: 3px solid #E6BE8A;
+    width:150px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+#bad{
+    border: 3px solid #E6BE8A;
+    width:150px;
+    border-radius: 10px;
+}
+
+#goodd{
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: larger;
+}
+
+#badd{
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: larger;
+}
