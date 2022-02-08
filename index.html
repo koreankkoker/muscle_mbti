@@ -3,6 +3,7 @@
 <head>
     <meta property="og:url" content= "http://muscle-mbti.tk/" />
     <meta property="og:title" content="근BTI" />
+    <meta property="og:type" content="website" />
     <meta id ="share_name" property="og:description" content="나는 어떤 근육을 닮았을까?" />
     <meta id="share_img" property="og:image" content="http://muscle-mbti.tk/muscle1.png" />
 
@@ -132,12 +133,9 @@
                 $("#muscle").html(result[mbti]["muscle"]);
                 $("#explain").html(result[mbti]["explain"]);
                 $("#subtitle").html(result[mbti]["subtitle"]);
-                $("#subname").html(result[mbti]["subname"])
-                $("#goodd").html(result[mbti]["good"])
-                $("#badd").html(result[mbti]["bad"])
-
-                $("#share_name").attr("content",result[mbti]["muscle"])
-                $("#share_img").attr("content",result[mbti]["img"])
+                $("#subname").html(result[mbti]["subname"]);
+                $("#goodd").html(result[mbti]["good"]);
+                $("#badd").html(result[mbti]["bad"]);
 
             }
             else{
