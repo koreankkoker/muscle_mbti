@@ -1,0 +1,3 @@
+User-agent: *
+Allow:/
+Sitemap: https://muscle-mbti.tk/sitemap.xml
