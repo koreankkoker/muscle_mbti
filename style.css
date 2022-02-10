@@ -191,3 +191,15 @@ li{
     font-family: 'Black Han Sans', sans-serif;
     margin-bottom: 20px;
 }
+
+#Copyright{
+    font-size: 50%;
+    margin: 0 auto;
+    font-family: 'Black Han Sans', sans-serif;
+}
+
+#email{
+    font-size: 60%;
+    margin: 0 auto;
+    font-family: 'Black Han Sans', sans-serif;
+}
