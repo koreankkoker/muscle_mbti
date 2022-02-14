@@ -203,3 +203,37 @@ li{
     margin: 0 auto;
     font-family: 'Black Han Sans', sans-serif;
 }
+
+#another{
+    height: 50px;
+    width: 60%;
+    background-color:#E6BE8A;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 90%;
+    font-weight:600;
+    border:none;
+    color:white;
+    
+}
+
+#anotherdiv{
+    text-align: center;
+}
+
+#onemore{
+    display: none;
+    text-align: center;
+}
+
+#more{
+    height: 50px;
+    width: 80%;
+    background-color:#E6BE8A;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 90%;
+    font-weight:600;
+    border:none;
+    color:white;
+}
