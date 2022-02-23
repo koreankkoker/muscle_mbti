@@ -217,6 +217,7 @@ li{
 }
 
 #anotherdiv{
+    margin-top: 10px;
     text-align: center;
 }
 
@@ -244,6 +245,6 @@ li{
 }
 
 #icon_3{
-    
+    margin-top: 10px;
     text-align: center;
 }
