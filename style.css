@@ -30,7 +30,7 @@ body{
     height: 80px;
     background-color:#E6BE8A;
     margin-top: 30%;
-    margin-bottom: 70%;
+    margin-bottom: 10%;
     font-family: 'Black Han Sans', sans-serif;
     font-size: 100%;
     font-weight:700;
@@ -211,11 +211,11 @@ li{
     margin-top: 30%;
     margin-bottom: 30%;
     font-family: 'Black Han Sans', sans-serif;
-    font-size: 90%;
+    font-size: 100%;
     font-weight:600;
     border:none;
     color:white;
-    
+    border-radius: 7px;
 }
 
 #anotherdiv{
@@ -236,4 +236,17 @@ li{
     font-weight:600;
     border:none;
     color:white;
+}
+
+#disqus_thread{
+    margin-top: 50%;
+}
+
+#icon3{
+    width:80%;
+}
+
+#icon_3{
+    margin-top: 30%;
+    text-align: center;
 }
