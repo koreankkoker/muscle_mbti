@@ -208,8 +208,6 @@ li{
     height: 50px;
     width: 60%;
     background-color:#E6BE8A;
-    margin-top: 30%;
-    margin-bottom: 30%;
     font-family: 'Black Han Sans', sans-serif;
     font-size: 100%;
     font-weight:600;
@@ -239,12 +237,10 @@ li{
 }
 
 #disqus_thread{
-    margin-top: 50%;
 }
 
 #icon3{
     width:80%;
-    margin-top: 30%;
 }
 
 #icon_3{
