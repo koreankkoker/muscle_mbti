@@ -30,7 +30,7 @@ body{
     height: 80px;
     background-color:#E6BE8A;
     margin-top: 30%;
-    margin-bottom: 50%;
+    margin-bottom: 70%;
     font-family: 'Black Han Sans', sans-serif;
     font-size: 100%;
     font-weight:700;
@@ -41,7 +41,7 @@ body{
     width:60px;
     height: 60px;
     margin: 0 auto;
-    margin-top: 40%;
+    margin-top: 20%;
 }
 
 #icon_2{
@@ -208,8 +208,8 @@ li{
     height: 50px;
     width: 60%;
     background-color:#E6BE8A;
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 30%;
+    margin-bottom: 30%;
     font-family: 'Black Han Sans', sans-serif;
     font-size: 90%;
     font-weight:600;
