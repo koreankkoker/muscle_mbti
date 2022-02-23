@@ -217,7 +217,6 @@ li{
 }
 
 #anotherdiv{
-    margin-top: 10px;
     text-align: center;
 }
 
@@ -237,14 +236,11 @@ li{
     color:white;
 }
 
-#disqus_thread{
-}
 
 #icon3{
     width:80%;
 }
 
 #icon_3{
-    margin-top: 10px;
     text-align: center;
 }
