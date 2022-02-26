@@ -248,10 +248,10 @@ li{
 }
 
 #introduction{
-    font-size: 10px;
+    font-size: 11px;
     font-family: 'Black Han Sans', sans-serif;
     margin-right: 30px;
     margin-left: 30px;
-    line-height:200%;
+    line-height:180%;
     letter-spacing:1px;
 }
