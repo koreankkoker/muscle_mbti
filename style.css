@@ -182,8 +182,9 @@ li{
 }
 
 #share{
-    margin: 0 auto;
-    margin-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 #share_ment{
@@ -221,6 +222,7 @@ li{
 }
 
 #onemore{
+    margin-top: 40px;
     display: none;
     text-align: center;
 }

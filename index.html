@@ -108,11 +108,16 @@
 
         <div id="explain" class="container mt-3">설명</div>
 
-        <div id="share_ment">결과를 친구들과 공유해보세요!</div>
-        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-        <div id="share" class="addthis_inline_share_toolbox_wzqh"></div>
+        
 
     </article>
+
+    <div id="share">
+        <div id="share_ment">결과를 친구들과 공유해보세요!</div>
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <div class="addthis_inline_share_toolbox_wzqh"></div>
+    </div>
+
     <input type="hidden" id="EI" value="0">
     <input type="hidden" id="SN" value="0">
     <input type="hidden" id="TF" value="0">
@@ -200,6 +205,8 @@
             $("#disqus_thread").hide();
             $("#anotherdiv").hide();
             $("#info").hide();
+            $("#icon_3").hide();
+            $("#share").hide();
             next();
         }
         $("#A").click(function () {
@@ -219,6 +226,7 @@
                 $("#anotherdiv").show();
                 $("#info").show();
                 $("#onemore").show();
+                $("#share").show();
                 var mbti = "";
                 ($("#EI").val() < 2) ? mbti += "I" : mbti += "E";
                 ($("#SN").val() < 2) ? mbti += "N" : mbti += "S";
